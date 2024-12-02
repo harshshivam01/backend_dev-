@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "name": "harsh",
+        "grade": "12th"
+    },
+    {
+        "id": 3,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    },
+    {
+        "id": 4,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    },
+    {
+        "id": 5,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    },
+    {
+        "id": 6,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    },
+    {
+        "id": 7,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    },
+    {
+        "id": 9,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    },
+    {
+        "id": 10,
+        "name": "shivam",
+        "age": "20",
+        "grade": "12th"
+    }
+]
