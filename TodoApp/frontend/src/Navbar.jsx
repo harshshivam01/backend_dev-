@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
@@ -31,7 +31,7 @@ const Navbar = () => {
           }`}
         >
           <li className="text-lg">
-            <a href="#home" className="hover:text-yellow-300">
+            <a href="/" className="hover:text-yellow-300">
               Home
             </a>
           </li>

@@ -1,7 +1,9 @@
 const Todo = require("../models/TodoModel");
 
 function getTodoList(req, res) {
-  Todo.find({})
+  const userId = req.user.userId;
+  
+  Todo.find({ user_id: userId })
     .then((todos) => {
       res.send(todos);
     })
@@ -12,13 +14,15 @@ function getTodoList(req, res) {
 
 function createTodo(req, res) {
   const { title, description } = req.body;
+  const user_id = req.user.userId;
+  
   Todo.create({
     title,
     description,
     completed: false,
+    user_id,
   })
     .then((todo) => {
-     
       res.status(201).send({
         status: "success",
         message: "Todo created successfully",
@@ -26,7 +30,6 @@ function createTodo(req, res) {
       });
     })
     .catch((err) => {
-      res.status(500).send(err);
       res.status(500).send({
         status: "error",
         message: "Todo creation failed",

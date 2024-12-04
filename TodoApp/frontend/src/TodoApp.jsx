@@ -42,8 +42,7 @@ const TodoApp = () => {
     try {
       const newTodo = {
         title: text,
-        description: '',
-        completed: false
+        description: ''
       };
       const response = await todoService.createTodo(newTodo);
       const updatedTasks = sortTodosByCompletion([...tasks, response.data]);

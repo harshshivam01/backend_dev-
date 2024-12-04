@@ -3,7 +3,7 @@ const todoRouter = express.Router();
 const { authenticateToken } = require("../middleware/authMiddleware");
 const { getTodoList, createTodo, updateTodo, deleteTodo } = require("../controller/todoList-Controller");
 
-// Protect all todo routes
+
 todoRouter.use(authenticateToken);
 
 todoRouter
