@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
+import { authService } from './services/authService';
+const { getToken , logout } = authService
 
 const Navbar = () => {
+  const token = getToken();
   const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
@@ -20,6 +23,14 @@ const Navbar = () => {
       navigate('/auth');
     }
   };
+  // const handleAuthClick = () => {
+  //   if(token){
+  //     logout();
+  //     navigate('/');
+  //     isLoggedIn = false; 
+  //   }
+   
+  // };
 
   return (
     <nav className="bg-blue-600 text-white fixed w-full shadow-md z-50">
@@ -47,7 +58,7 @@ const Navbar = () => {
           </li>
           <li className="text-lg">
             <button onClick={handleAuthClick} className="hover:text-yellow-300">
-              {isLoggedIn ? 'Logout' : 'Login'}
+             {token? "logout" : "login"}
             </button>
           </li>
         </ul>

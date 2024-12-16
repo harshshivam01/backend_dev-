@@ -15,10 +15,16 @@ export const authService = {
         try {
             const response = await axiosInstance.post('/login', credentials);
             if (response.data.token) {
+                if (typeof response.data.token !== 'string' || !response.data.token.length) {
+                    throw new Error('Invalid token received');
+                }
                 localStorage.setItem('token', response.data.token);
             }
             return response.data;
         } catch (error) {
+            if (error.message === 'Invalid token received') {
+                throw { message: 'Authentication failed: Invalid token' };
+            }
             throw error.response?.data || { message: 'Network error occurred' };
         }
     },
@@ -27,10 +33,16 @@ export const authService = {
         try {
             const response = await axiosInstance.post('/register', userData);
             if (response.data.token) {
+                if (typeof response.data.token !== 'string' || !response.data.token.length) {
+                    throw new Error('Invalid token received');
+                }
                 localStorage.setItem('token', response.data.token);
             }
             return response.data;
         } catch (error) {
+            if (error.message === 'Invalid token received') {
+                throw { message: 'Registration failed: Invalid token' };
+            }
             throw error.response?.data || { message: 'Network error occurred' };
         }
     },
@@ -43,3 +55,4 @@ export const authService = {
         return localStorage.getItem('token');
     }
 }; 
+
