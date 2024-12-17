@@ -41,22 +41,22 @@ const Navbar = () => {
             isOpen ? 'block' : 'hidden'
           }`}
         >
-          <li className="text-lg p-6">
+          <li className="text-lg px-6">
             <a href="/" className="hover:text-yellow-300 ">
               Home
             </a>
           </li>
-          <li className="text-lg p-6">
+          <li className="text-lg px-6">
             <a href="#tasks" className="hover:text-yellow-300 ">
               Tasks
             </a>
           </li>
-          <li className="text-lg p-6">
+          <li className="text-lg px-6">
             <a href="#about" className="hover:text-yellow-300 ">
               About
             </a>
           </li>
-          <li className="text-lg p-6">
+          <li className="text-lg px-6">
             <button onClick={handleAuthClick} className="hover:text-yellow-300">
              {token? "logout" : "login"}
             </button>
