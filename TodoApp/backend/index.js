@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { dbConn } = require("./connection/dbConn");
+const  run  = require("./connection/dbConn");
 const { todoRouter } = require("./Route/todoRoute");
 const { userRouter } = require("./Route/userRoute");
 
@@ -8,7 +8,7 @@ const { userRouter } = require("./Route/userRoute");
 const app = express();
 const port = 5050;
 
-dbConn("todo_db");
+run('todo_db').then(() => console.log('Connection successful')).catch(console.error);
 
 app.use(cors({
     origin: 'http://localhost:5173',
