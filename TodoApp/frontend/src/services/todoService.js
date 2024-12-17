@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { authService } from './authService';
 
-const API_BASE_URL = 'http://localhost:5050/api/todo';
+const API_BASE_URL = 'https://backend-dev-r0xz.onrender.com/api/todo';
 
 const getAuthHeaders = () => ({
     headers: {
