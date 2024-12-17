@@ -11,7 +11,8 @@ const port = 5050;
 run('todo_db').then(() => console.log('Connection successful')).catch(console.error);
 
 app.use(cors({
-    origin: 'https://backend-dev-psi.vercel.app/',
+    origin: 'https://backend-fol2mrhdr-harshshivam02s-projects.vercel.app/',
+    
     credentials: true
 }));
 app.use(express.json());
