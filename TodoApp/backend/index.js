@@ -12,7 +12,9 @@ run('todo_db').then(() => console.log('Connection successful')).catch(console.er
 
 app.use(cors({
     origin: 'https://backend-fol2mrhdr-harshshivam02s-projects.vercel.app/',
-    
+    methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+
     credentials: true
 }));
 app.use(express.json());
