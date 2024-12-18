@@ -10,14 +10,15 @@ const port = 5050;
 
 run('todo_db').then(() => console.log('Connection successful')).catch(console.error);
 
-app.use(cors({
-    origin: '*',
-   
-    methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
 
-    credentials: true
+
+app.use(cors({
+    origin: 'https://backend-dev-git-main-harshshivam02s-projects.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // Ensure credentials are allowed
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
