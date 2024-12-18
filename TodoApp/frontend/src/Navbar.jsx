@@ -46,24 +46,19 @@ const Navbar = () => {
               Home
             </a>
           </li>
-          <li className="text-lg px-6">
-            <a href="#tasks" className="hover:text-yellow-300 ">
-              Tasks
-            </a>
-          </li>
-          <li className="text-lg px-6">
-            <a href="#about" className="hover:text-yellow-300 ">
-              About
-            </a>
-          </li>
+         
           <li className="text-lg px-6">
             <button onClick={handleAuthClick} className="hover:text-yellow-300">
-             {token? "logout" : "login"}
+             {token? "Logout" : "Login"}
             </button>
           </li>
         </ul>
-        <div className="text-2xl md:hidden cursor-pointer p-8" onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
+        
+        <div className="text-2xl md:hidden cursor-pointer p-8" >
+          {/* {isOpen ? <FaTimes /> : <FaBars />} */}
+          <button onClick={handleAuthClick} className="hover:text-yellow-300">
+             {token? "Logout" : "Login"}
+            </button>
         </div>
       </div>
     </nav>
